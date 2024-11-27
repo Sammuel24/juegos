@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos Sammuel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0078D7; /* Fondo azul */
+            color: white;
+        }
+
+        header {
+            background-color: #0059B3;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        .game-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .game-card:hover {
+            transform: scale(1.05);
+        }
+
+        .game-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .game-card h3 {
+            margin: 10px;
+            font-size: 1.2em;
+            color: #0059B3;
+        }
+
+        .game-card p {
+            margin: 10px;
+            font-size: 0.9em;
+            color: #333;
+        }
+
+        .game-card a {
+            display: block;
+            text-align: center;
+            margin: 10px;
+            padding: 10px;
+            background: #0078D7;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .game-card a:hover {
+            background: #0059B3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0059B3;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Juegos Sammuel</h1>
+    </header>
+    <div class="container">
+        <!-- Lista de 50 Juegos -->
+        <!-- Generar tarjetas -->
+        <!-- NOTA: Puedes añadir más juegos cambiando los enlaces y nombres -->
+        <script>
+            const juegos = [
+                {nombre: "Dino Game", enlace: "https://chromedino.com/"},
+                {nombre: "2048", enlace: "https://play2048.co/"},
+                {nombre: "Ajedrez", enlace: "https://www.chess.com/play/computer"},
+                {nombre: "Pac-Man", enlace: "https://www.google.com/search?q=Pac-Man"},
+                {nombre: "Snake", enlace: "https://playsnake.org/"},
+                {nombre: "Flappy Bird", enlace: "https://flappybird.io/"},
+                {nombre: "Tetris", enlace: "https://tetris.com/play-tetris"},
+                {nombre: "Mario", enlace: "https://supermario-game.com/"},
+                {nombre: "Angry Birds", enlace: "https://angrybirds.com/"},
+                {nombre: "Among Us Online", enlace: "https://now.gg/apps/innersloth/1347/among-us.html"},
+                {nombre: "Geometry Dash", enlace: "https://geometrydash.io/"},
+                {nombre: "Crossy Road", enlace: "https://www.crazygames.com/game/crossy-road"},
+                {nombre: "Slither.io", enlace: "https://slither.io/"},
+                {nombre: "Helix Jump", enlace: "https://www.crazygames.com/game/helix-jump"},
+                {nombre: "Minecraft Classic", enlace: "https://classic.minecraft.net/"},
+                {nombre: "Solitaire", enlace: "https://www.solitairecardgames.com/"},
+                {nombre: "UNO Online", enlace: "https://www.crazygames.com/game/uno-online"},
+                {nombre: "Cut the Rope", enlace: "https://www.crazygames.com/game/cut-the-rope"},
+                {nombre: "Temple Run 2", enlace: "https://www.crazygames.com/game/temple-run-2"},
+                {nombre: "Plants vs Zombies", enlace: "https://playclassic.games/games/strategy-dos-games-online/play-plants-vs-zombies-online/"},
+                {nombre: "Zuma", enlace: "https://www.miniclip.com/games/zuma/en/"},
+                {nombre: "Bubble Shooter", enlace: "https://www.bubbleshooter.net/"},
+                {nombre: "Bejeweled", enlace: "https://www.classicgamesarcade.com/game/21636/bejeweled.html"},
+                {nombre: "Super Smash Flash", enlace: "https://www.supersmashflash.com/"},
+                {nombre: "Street Fighter II", enlace: "https://www.playclassic.games/games/fighting-dos-games-online/play-street-fighter-2-online/"},
+                {nombre: "Happy Wheels", enlace: "https://totaljerkface.com/happy_wheels.tjf"},
+                {nombre: "Moto X3M", enlace: "https://www.crazygames.com/game/moto-x3m"},
+                {nombre: "Krunker.io", enlace: "https://krunker.io/"},
+                {nombre: "Shell Shockers", enlace: "https://shellshock.io/"},
+                {nombre: "Hole.io", enlace: "https://hole-io.com/"},
+                {nombre: "Stumble Guys", enlace: "https://stumbleguys.onl/"},
+                {nombre: "Fireboy & Watergirl", enlace: "https://www.crazygames.com/game/fireboy-and-watergirl"},
+                {nombre: "Papa's Pizzeria", enlace: "https://www.crazygames.com/game/papas-pizzeria"},
+                {nombre: "Run 3", enlace: "https://run3freegame.com/"},
+                {nombre: "Sugar Sugar", enlace: "https://sugar-freegames.com/"},
+                {nombre: "Parking Fury", enlace: "https://www.crazygames.com/game/parking-fury"},
+                {nombre: "Jetpack Joyride", enlace: "https://jetpackjoyride.io/"},
+                {nombre: "Ball Blast", enlace: "https://www.crazygames.com/game/ball-blast"},
+                {nombre: "Clash Royale", enlace: "https://clashroyale.com/"},
+                {nombre: "Flip Master", enlace: "https://www.crazygames.com/game/flip-master"},
+                {nombre: "Stick Fight", enlace: "https://www.crazygames.com/game/stick-fight"},
+                {nombre: "Paper.io", enlace: "https://paper-io.com/"},
+                {nombre: "Draw Climber", enlace: "https://www.crazygames.com/game/draw-climber"},
+                {nombre: "Slope", enlace: "https://slopegame.io/"},
+                {nombre: "Gartic Phone", enlace: "https://garticphone.com/"},
+                {nombre: "Scribbl.io", enlace: "https://skribbl.io/"},
+                {nombre: "Chess Online", enlace: "https://lichess.org/"},
+                {nombre: "Tower Defense", enlace: "https://www.crazygames.com/game/tower-defense"},
+                {nombre: "Adventure Time", enlace: "https://adventuretimegames.com/"}
+            ];
+
+            let container = document.querySelector(".container");
+            juegos.forEach(juego => {
+                container.innerHTML += `
+                    <div class="game-card">
+                        <img src="https://via.placeholder.com/300x150?text=${juego.nombre}" alt="${juego.nombre}">
+                        <h3>${juego.nombre}</h3>
+                        <p>¡Haz clic para jugar ${juego.nombre} ahora!</p>
+                        <a href="${juego.enlace}" target="_blank">Jugar Ahora</a>
+                    </div>
+                `;
+            });
+        </script>
+    </div>
+    <footer>
+        <p>&copy; 2024 Sammuel Castaño | Página de Juegos</p>
+    </footer>
+</body>
+</html>
